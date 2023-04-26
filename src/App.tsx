@@ -1,9 +1,15 @@
 import React, { useState } from 'react';
 import './App.css';
-import InputField from './component/inputField';
-import { Todo } from './model';
-import TodoList from './component/todoList';
+import InputField from './component/todoList/addTask';
+// import { Todo } from './model';
+import TodoList from './component/todoList/taskList';
 import Users from './pages/users/users';
+
+interface Todo {
+  id:number;
+  todo:string;
+  isDone:boolean;
+}
 
 const App: React.FC = () => {
   const [todo, setTodo] = useState<string>("")

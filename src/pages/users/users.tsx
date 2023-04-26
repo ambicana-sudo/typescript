@@ -1,15 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import axios from 'axios';
 import UserList from '../../component/userList/userList';
-
-type User = {
-  id: number;
-  email: string;
-  first_name: string;
-  last_name: string;
-  avatar: string
-};
-
+import { User } from '../../component/userList/users';
 interface GetUsersResponse {
   data: User[];
 };

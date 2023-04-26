@@ -1,10 +1,13 @@
 import React, {useEffect, useState} from 'react';
 import axios from 'axios';
+import UserList from '../../component/userList/userList';
 
 type User = {
   id: number;
   email: string;
   first_name: string;
+  last_name: string;
+  avatar: string
 };
 
 interface GetUsersResponse {
@@ -19,7 +22,7 @@ const GetUsers: React.FC = ()=>{
         headers: {Accept: 'application/json',}
       }
       const response = await axios.get<GetUsersResponse>(
-        `${process.env.REACT_API_URL}/users`, requestOptions
+        `https://reqres.in/api/users`, requestOptions
       )
       const data = await response.data.data
       if(response.status === 200){
@@ -35,8 +38,10 @@ const GetUsers: React.FC = ()=>{
   }, [])
 
   return(
-    <>
-    </>
+    <div className='users'>
+      <h1>UserList</h1>
+      <UserList users={users}/>
+    </div>
   )
 }
 

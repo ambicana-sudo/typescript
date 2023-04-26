@@ -2,7 +2,7 @@ import React from 'react'
 import BorderColorOutlinedIcon from '@mui/icons-material/BorderColorOutlined';
 import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
 import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
-import { Todo } from '../../model';
+import { Todo } from './todo';
 
 interface Props{
   task: Todo;

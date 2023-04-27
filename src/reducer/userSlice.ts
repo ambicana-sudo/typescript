@@ -1,4 +1,4 @@
-import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
+import { createSlice } from '@reduxjs/toolkit'
 import { User } from '../component/userList/users'
 import { fetchUsers } from './fetchUser';
 

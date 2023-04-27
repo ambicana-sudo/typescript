@@ -14,11 +14,12 @@ interface GetUsersResponse {
 export const fetchUsers = createAsyncThunk<User[]>(
   'content/fetchUsers',
   async () => {
+    const url = process.env.REACT_APP_API_URL
     const requestOptions = {
       headers: {Accept: 'application/json',}
     }
     const response = await axios.get<GetUsersResponse>(
-      `https://reqres.in/api/users`, requestOptions
+      `${url}users`, requestOptions
     )
     const data = await response.data.data
     return data
